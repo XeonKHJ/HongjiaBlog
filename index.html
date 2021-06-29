@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hongjia's Blog</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+        #blogTitle
+        {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #menubar {
+            top: 70px;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background-color: black;
+        }
+
+        #menuList{
+            padding: 0;
+            margin: 0;
+            float:left;
+            list-style: none;    
+        }
+
+        .menuitem {
+            float: left;
+        }
+        
+        .menuitem>a {
+            background-color: black;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .articleTtile
+        {
+            font-size: 10px;
+        }
+
+        .articleDiv
+        {
+            margin: 10px;
+        }
+    </style>
+</head>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+
+<body>
+    <div class="top"></div>
+    <div id="blogTitle">
+        <h1>我的博客</h1>
+    </div>
+    <div id="menubar">
+        <ul id="menuList">
+            <li class="menuitem"><a href="">博客</a></li>
+            <li class="menuitem"><a href="">关于</a></li>
+            <li class="menuitem"><a href="">联系</a></li>
+            <li class="menuitem"><a href="">RSS</a></li>
+        </ul>
+    </div>
+    <div class="articles">
+        <ul id="articlesList" style="list-style: none;">
+            <!--Dynamic generate article list-->
+            <li>
+                <div class="articleDiv">
+                    <a href="skdf">
+                    <h1 class="articleTitle">Article 1</h1></a>
+                    <p class="articleDate">2020-10-1</p>
+                    <div class="articleContent">
+                        <p>skdfjslkdjfsd</p>
+                        <p>skdjflskdjf</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="articleDiv">
+                    <h1 class="articleTitle">Article 2</h1>
+                    <p class="articleDate"></p>
+                    <div class="articleContent"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var myItems;
+
+        $.getJSON('https://raw.githubusercontent.com/XeonKHJ/GamePassScores/GameInfos/ConsoleGames.json', function (data) {
+            myItems = data.items;
+            console.log(myItems);
+        });
+    });
+</script>
+
+</html>
